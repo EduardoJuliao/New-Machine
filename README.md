@@ -25,7 +25,7 @@ What the scripts does as current version
     ✅ Git
     ❌ Visual Studio 2019
     ❌ Visual Studio Code
-    ❌ SSMS
+    ✅ SSMS
     ❌ SQL Server
     ❌ Cmder
     ❌ Notepad++
@@ -35,7 +35,7 @@ What the scripts does as current version
 
     ❌ Dotnet Core
     ❌ .NET Framework
-    ❌ Nodejs
+    ✅ Nodejs
 
 ### Environment
 

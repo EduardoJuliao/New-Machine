@@ -1,4 +1,4 @@
-Import-Module .\Utils\Utils.psm1
+Import-Module .\lib\Utils\Utils.psm1
 
 function Set-Git{
 
