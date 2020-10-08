@@ -7,8 +7,8 @@ These scripts helps configure a new development environment.
 1. Download the files
 2. Open a new instance of powershell in admin mode
 3. navigate to the folder
-4. run `machines\WebDeveloper.programs.ps1`
-5. run `machines\WebDeveloper.startup.ps1`
+4. run `machines\Machines.ps1`
+5. run `machines\WebApps.ps1`
 
 ### Optional use
 
@@ -24,12 +24,12 @@ What the scripts does as current version
 
     ✅ Git
     ❌ Visual Studio 2019
-    ❌ Visual Studio Code
+    ✅ Visual Studio Code
     ✅ SSMS
     ❌ SQL Server
-    ❌ Cmder
-    ❌ Notepad++
-    ❌ Sublime
+    ✅ Cmder
+    ✅ Notepad++
+    ✅ Sublime
 
 ### Frameworks installed
 
@@ -48,4 +48,3 @@ What the scripts does as current version
 
     ⌛ Run directly from web
     ⌛ Choose what to install
-    ⌛ Chocolatey support
