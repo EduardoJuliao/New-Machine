@@ -8,7 +8,8 @@ These scripts helps configure a new development environment.
 2. Open a new instance of powershell in admin mode
 3. navigate to the folder
 4. run `machines\Machines.ps1`
-5. run `machines\WebApps.ps1`
+5. Open a new instance of powershell in admin mode (needed because powershell needs to be refreshed)
+6. run `machines\WebApps.ps1`
 
 ### Optional use
 
@@ -48,3 +49,4 @@ What the scripts does as current version
 
     ⌛ Run directly from web
     ⌛ Choose what to install
+    ⌛ Multiple Dotnet Frameworks
