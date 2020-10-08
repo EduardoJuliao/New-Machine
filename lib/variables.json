@@ -1,0 +1,8 @@
+[
+  {
+    "HostName": "localhost.gridbeyond.org",
+    "AppPoolName": "CustomerPortalPool",
+    "IISSiteName": "CustomerPortal",
+    "PyshicalPath": "D:\\Code\\Gridbeyond\\Web-Portal\\NetSee.CustomerPortalGit\\Netsee.CustomerPortal"
+  }
+]
