@@ -37,6 +37,7 @@ What the scripts does as current version
     ✅ Dotnet Core
     ❌ .NET Framework
     ✅ Nodejs
+    ❌ Typescript
 
 ### Environment
 

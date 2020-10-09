@@ -1,5 +1,5 @@
-Import-Module .\lib\Folder.setup.psM1
-Import-Module .\lib\IIS.config.ps1
+Import-Module .\lib\Folder.setup.psm1
+Import-Module .\lib\IIS.config.psm1
 Import-Module .\lib\Programs\Git.setup.psm1
 Import-Module .\lib\Programs\Node.setup.psm1
 Import-Module .\lib\Programs\ssms.setup.psm1

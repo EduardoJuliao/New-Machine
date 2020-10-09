@@ -1,3 +1,5 @@
+Import-Module .\lib\IIS.config.psm1
+
 # Configure Web Application
 $webApps = .\lib\variables.json | ConvertFrom-Json
 
