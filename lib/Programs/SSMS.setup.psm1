@@ -6,7 +6,7 @@ function Set-SSMS{
     $dest = "D:\Downloads\SSMS-Setup-ENU.exe"
     
     Get-Program -url $url -output $dest
-    Start-Install -file $dest -arguments "/QUIET"
+    Start-Install -file $dest -arguments "-q"
 }
 
 Export-ModuleMember -Function Set-SSMS
