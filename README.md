@@ -37,7 +37,10 @@ What the scripts does as current version
     ✅ Dotnet Core
     ❌ .NET Framework
     ✅ Nodejs
-    ❌ Typescript
+    ✅ Typescript
+    ✅ Angular
+    ✅ Vue
+    ✅ Gulp
 
 ### Environment
 
@@ -46,8 +49,12 @@ What the scripts does as current version
     ❌ SQL Server Instance
     ❌ Git for Powershell
 
+### Features
+
+    ✅ Choose what to install
+    ✅ Chocolatey support
+
 ## Roadmap
 
     ⌛ Run directly from web
-    ⌛ Choose what to install
     ⌛ Multiple Dotnet Frameworks

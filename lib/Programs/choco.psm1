@@ -1,7 +1,9 @@
 function Set-AdditionalPrograms
 {
-    choco install vscode cmder choco install notepadplusplus choco install sublimetext2 -y
+    $packages = Get-Content -Raw -Path .\data\choco.packages.json | ConvertFrom-Json
+
+    choco install $packages -y
 }
 
-Export-ModuleMember -Funciton Set-AdditionalPrograms
+Export-ModuleMember -Function Set-AdditionalPrograms
 
