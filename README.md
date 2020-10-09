@@ -34,7 +34,7 @@ What the scripts does as current version
 
 ### Frameworks installed
 
-    ❌ Dotnet Core
+    ✅ Dotnet Core
     ❌ .NET Framework
     ✅ Nodejs
 
