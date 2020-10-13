@@ -7,13 +7,16 @@ These scripts helps configure a new development environment.
 1. Download the files
 2. Open a new instance of powershell in admin mode
 3. navigate to the folder
-4. run `machines\Machines.ps1`
-5. Open a new instance of powershell in admin mode (needed because powershell needs to be refreshed)
-6. run `machines\WebApps.ps1`
+4. run `machines\Machines.ps1`.
+5. Close powershell
+
+This script will install required software and frameworks to start development.
+
+The full list of what is supported is listed below.
 
 ### Optional use
 
-`lib\variables` can install multiple Customer Portals, just add a new object to the array.
+For web developers, running `machines\WebApps.ps1` will create web applications described in `data\webapps.json`
 
 ⚠⚠ Objects with same name will break the flow 😊
 
