@@ -4,7 +4,9 @@ function Set-AdditionalPrograms {
     [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; 
     Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
-    $packages = Get-Content -Raw -Path ..\..\data\choco.packages.json | ConvertFrom-Json
+    $dataFile = Resolve-Path ..\..\data\choco.packages.json
+
+    $packages = Get-Content -Raw -Path $dataFile  | ConvertFrom-Json
 
     choco install $packages -y
 }
