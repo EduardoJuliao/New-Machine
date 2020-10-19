@@ -11,7 +11,10 @@ function Get-Program {
         [String]$url,
         [String]$output
     )
-    $fileName = Get-FileName -destinationFile $dest;
+    Set-ExecutionPolicy Bypass -Scope Process -Force; 
+    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; 
+    
+    $fileName = Get-FileName -destinationFile $output;
 
     try {
         Write-Host "Downloading $fileName..." -ForegroundColor Yellow
@@ -32,7 +35,7 @@ function Start-Install {
         [String]$file,
         [String[]]$arguments
     )
-    $fileName = Get-FileName -destinationFile $dest;
+    $fileName = Get-FileName -destinationFile $file;
     try {
         Write-Host "Installing $fileName..." -ForegroundColor Yellow
 

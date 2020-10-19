@@ -30,7 +30,7 @@ What the scripts does as current version
     ❌ Visual Studio 2019
     ✅ Visual Studio Code
     ✅ SSMS
-    ❌ SQL Server
+    ✅ SQL Server
     ✅ Cmder
     ✅ Notepad++
     ✅ Sublime
@@ -49,8 +49,8 @@ What the scripts does as current version
 
     ✅ IIS
     ✅ Dev Certificate
-    ❌ SQL Server Instance
-    ❌ Git for Powershell
+    ✅ SQL Server Instance
+    ✅ Git for Powershell
 
 ### Features
 
@@ -61,3 +61,8 @@ What the scripts does as current version
 
     ⌛ Run directly from web
     ⌛ Multiple Dotnet Frameworks
+
+## Imporvements
+
+For now, the scripts download the .ISO evertytime it's run,
+this can be improved by having it downlaoded in a shared folder, copying and using this.
