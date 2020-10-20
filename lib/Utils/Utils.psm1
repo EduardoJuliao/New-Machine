@@ -10,24 +10,23 @@ function Get-Program {
     param(
         [String]$url,
         [String]$output
-    )
-    Set-ExecutionPolicy Bypass -Scope Process -Force; 
-    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; 
-    
+    )    
     $fileName = Get-FileName -destinationFile $output;
 
-    try {
-        Write-Host "Downloading $fileName..." -ForegroundColor Yellow
-
-        (New-Object System.Net.WebClient).DownloadFile($url, $output)
-
-        Write-Host "Done!" -ForegroundColor Green
-    }
-    catch {
-        Write-Host "An error occurred while downloading $fileName"
-        Write-Host $_
-    }
+    if(-not (Test-Path $fileName))
+    {
+        try {
+            Write-Host "Downloading $fileName..." -ForegroundColor Yellow
     
+            (New-Object System.Net.WebClient).DownloadFile($url, $output)
+    
+            Write-Host "Done!" -ForegroundColor Green
+        }
+        catch {
+            Write-Host "An error occurred while downloading $fileName"
+            Write-Host $_
+        }
+    }
 }
 
 function Start-Install {
