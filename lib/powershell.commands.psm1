@@ -15,9 +15,12 @@ function Set-PSCommands{
     $sqlServer = Get-ModuleSourcePath -moduleName $modulesSource.SqlServerDsc
     $poshGit = Get-ModuleSourcePath -moduleName $modulesSource.PoshGit
 
-    Copy-Item -Path $sqlServer  -Destination $destPath  -Recurse
-    Copy-Item -Path $poshGit -Destination $destPath  -Recurse
-    
+    if(-not (Test-Path $sqlServer)){
+        Copy-Item -Path $sqlServer  -Destination $destPath  -Recurse
+    }
+    if(-not (Test-Path $poshGit)){
+        Copy-Item -Path $poshGit  -Destination $destPath  -Recurse
+    }
 }
 
 Export-ModuleMember -Function Set-PSCommands
