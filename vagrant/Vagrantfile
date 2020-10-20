@@ -1,0 +1,9 @@
+# Default file for Windows server
+Vagrant.configure("2") do |config|
+    config.vm.define :TestMachine do |t|
+    end
+    config.vm.box = "mwrock/Windows2016"
+  
+    config.vm.network "public_network", bridge: "Realtek USB GbE Family Controller"
+  end
+  
