@@ -1,9 +1,10 @@
 Import-Module ..\lib\Utils\Utils.psm1
 
 function Set-SSMS{
+    $defaults = $global:defaults;
 
-    $url = "https://aka.ms/ssmsfullsetup";
-    $dest = "c:\Downloads\SSMS-Setup-ENU.exe"
+    $url = $defaults.Urls.SSMS;
+    $dest = Get-DonwloadPath -fileName $defaults.Files.SSMS
     
     Get-Program -url $url -output $dest
     Start-Install -file $dest -arguments "-q"

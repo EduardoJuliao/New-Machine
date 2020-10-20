@@ -1,9 +1,10 @@
 Import-Module ..\lib\Utils\Utils.psm1
 
 function Set-Git{
+    $defaults = $global:defaults;
 
-    $url = "https://github.com/git-for-windows/git/releases/download/v2.28.0.windows.1/Git-2.28.0-64-bit.exe";
-    $dest = "c:\Downloads\Git-2.28.0-64-bit.exe"
+    $url = $defaults.Urls.Git;
+    $dest = Get-DonwloadPath -fileName $defaults.Files.Git
     
     Get-Program -url $url -output $dest
     Start-Install -file $dest -arguments "/SILENT"

@@ -49,4 +49,20 @@ function Start-Install {
     }
 }
 
-Export-ModuleMember -Function Start-Install, Get-Program -Alias utils
+function Get-DonwloadPath{
+    param(
+        $fileName
+    )
+
+    return Join-Path $defaults.Paths.Downloads $fileName
+}
+
+function Get-JsonData{
+    param(
+        $fileName
+    )
+
+    return Get-Content (Join-Path $defaults.Paths.Data.Base $fileName) | ConvertFrom-Json
+}
+
+Export-ModuleMember -Function Start-Install, Get-Program, Get-DonwloadPath -Alias utils

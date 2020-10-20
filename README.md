@@ -61,6 +61,7 @@ What the scripts does as current version
 
     ⌛ Run directly from web
     ⌛ Multiple Dotnet Frameworks
+    ⌛ Gulp support for specific actions
 
 ## Imporvements
 

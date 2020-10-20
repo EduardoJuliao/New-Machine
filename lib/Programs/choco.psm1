@@ -1,15 +1,17 @@
-function Set-AdditionalPrograms {
+function Set-Choco {
     
+    $defaults = $global:defaults;
+
     Set-ExecutionPolicy Bypass -Scope Process -Force; 
     [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; 
-    Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+    Invoke-Expression ((New-Object System.Net.WebClient).DownloadString($defaults.Urls.Chocolatey))
+}
 
-    $dataFile = Resolve-Path ..\..\data\choco.packages.json
-
-    $packages = Get-Content -Raw -Path $dataFile  | ConvertFrom-Json
+function Set-AdditionalPrograms {
+    $packages = Get-JsonData -fileName $global:defaults.Paths.Data.Chocolatey
 
     choco install $packages -y
 }
 
-Export-ModuleMember -Function Set-AdditionalPrograms
+Export-ModuleMember -Function *
 

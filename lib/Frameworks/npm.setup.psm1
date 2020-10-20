@@ -1,5 +1,5 @@
 function Set-NpmPackages {
-    $packages = Get-Content -Raw -Path .\data\npm.packages.json | ConvertFrom-Json
+    $packages = Get-JsonData -fileName $global:defaults.Paths.Data.Npm
 
     npm install -g $packages
 }

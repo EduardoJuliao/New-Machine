@@ -1,9 +1,10 @@
 Import-Module ..\lib\Utils\Utils.psm1
 
 function Set-DotnetCore31{
+    $defaults = $global:defaults;
 
-    $url = "https://download.visualstudio.microsoft.com/download/pr/9706378b-f244-48a6-8cec-68a19a8b1678/1f90fd18eb892cbb0bf75d9cff377ccb/dotnet-sdk-3.1.402-win-x64.exe";
-    $dest = "c:\Downloads\dotnet-sdk-3.1.402-win-x64.exe"
+    $url = $defaults.Urls.DotnetCore31;
+    $dest = Get-DonwloadPath -fileName $defaults.Files.DotnetCore31
     
     Get-Program -url $url -output $dest
     Start-Install -file $dest -arguments "/SILENT"

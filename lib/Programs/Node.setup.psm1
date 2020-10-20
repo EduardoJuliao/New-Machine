@@ -1,10 +1,11 @@
 Import-Module ..\lib\Utils\Utils.psm1
 
 function Set-Node{
+    $defaults = $global:defaults;
 
-    $url = "https://nodejs.org/dist/v12.19.0/node-v12.19.0-x64.msi";
-    $dest = "c:\Downloads\node-v12.19.0-x64.msi"
-    
+    $url = $defaults.Urls.Node;
+    $dest = Get-DonwloadPath -fileName $defaults.Files.Node
+
     Get-Program -url $url -output $dest
     Start-Install -file $dest -arguments "/QUIET"
 }
