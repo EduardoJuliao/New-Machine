@@ -7,7 +7,7 @@ These scripts helps configure a new development environment.
 1. Download the files
 2. Open a new instance of powershell in admin mode
 3. navigate to the folder
-4. run `machines\Machines.ps1`.
+4. run `.\Machines.ps1`.
 5. Close powershell
 
 This script will install required software and frameworks to start development.
@@ -62,6 +62,7 @@ What the scripts does as current version
     ⌛ Run directly from web
     ⌛ Multiple Dotnet Frameworks
     ⌛ Gulp support for specific actions
+    ⌛ Docker?
 
 ## Imporvements
 
