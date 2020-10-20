@@ -21,7 +21,12 @@
     "Downloads": "C:\\Downloads",
     "GridBeyond": "C:\\Code\\GridBeyond",
     "Modules": {
-      "Destination": "C:\\Program Files\\WindowsPowerShell\\Modules"
+      "Destination": "C:\\Program Files\\WindowsPowerShell\\Modules",
+      "Source": {
+        "Base": "D:\\code\\Scripts\\Powershell\\Modules",
+        "SqlServerDsc": "SqlServerDsc",
+        "PoshGit": "posh-git"
+      }
     },
     "Data": {
       "Base": "D:\\code\\Scripts\\Powershell\\data\\",

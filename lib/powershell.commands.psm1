@@ -1,10 +1,22 @@
+function Get-ModuleSourcePath{
+    param(
+        $moduleName
+    )
+
+    return Join-Path $global:defaults.Paths.Modules.Source.Base $moduleName
+}
+
 function Set-PSCommands{
-    $destPath = $global:defaults.Paths.Modules.Destination
+    $defaults = $global:defaults
 
-    Set-ExecutionPolicy -Scope LocalMachine -ExecutionPolicy RemoteSigned -Force
+    $modulesSource = $defaults.Paths.Modules.Source
+    $destPath = $defaults.Paths.Modules.Destination
 
-    Copy-Item -Path $PSScriptRoot\modules\SqlServerDsc -Destination $destPath  -Recurse
-    Copy-Item -Path $PSScriptRoot\modules\posh-git -Destination $destPath  -Recurse
+    $sqlServer = Get-ModuleSourcePath -moduleName $modulesSource.SqlServerDsc
+    $poshGit = Get-ModuleSourcePath -moduleName $modulesSource.PoshGit
+
+    Copy-Item -Path $sqlServer  -Destination $destPath  -Recurse
+    Copy-Item -Path $poshGit -Destination $destPath  -Recurse
     
 }
 
