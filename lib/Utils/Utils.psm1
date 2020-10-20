@@ -64,4 +64,4 @@ function Get-JsonData{
     return Get-Content (Join-Path $defaults.Paths.Data.Base $fileName) | ConvertFrom-Json
 }
 
-Export-ModuleMember -Function Start-Install, Get-Program, Get-DonwloadPath -Alias utils
+Export-ModuleMember -Function Start-Install, Get-Program, Get-DonwloadPath, Get-JsonData -Alias utils
