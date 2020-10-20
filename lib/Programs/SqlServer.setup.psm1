@@ -1,4 +1,4 @@
-Import-Module ..\lib\Utils\Utils.psm1
+Import-Module $PSScriptRoot\..\Utils\Utils.psm1
 
 function Set-SqlServer {
     $defaults = $global:defautls;

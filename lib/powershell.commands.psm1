@@ -3,8 +3,8 @@ function Set-PSCommands{
 
     Set-ExecutionPolicy -Scope LocalMachine -ExecutionPolicy RemoteSigned -Force
 
-    Copy-Item -Path ..\modules\SqlServerDsc -Destination $destPath  -Recurse
-    Copy-Item -Path ..\modules\posh-git -Destination $destPath  -Recurse
+    Copy-Item -Path $PSScriptRoot\modules\SqlServerDsc -Destination $destPath  -Recurse
+    Copy-Item -Path $PSScriptRoot\modules\posh-git -Destination $destPath  -Recurse
     
 }
 
