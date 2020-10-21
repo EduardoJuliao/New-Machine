@@ -1,9 +1,29 @@
-# Default file for Windows server
+$script = <<-SCRIPT
+Set-ItemProperty -Path "HKLM:\\System\\CurrentControlSet\\Control\\Terminal Server" -Name "fDenyTSConnections" -Value 0
+Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
+SCRIPT
+
 Vagrant.configure("2") do |config|
-    config.vm.define :TestMachine do |t|
-    end
-    config.vm.box = "mwrock/Windows2016"
+  config.vm.box = "jborean93/WindowsServer2016"
+  config.vm.hostname = "Arklay1998"
+  config.vm.provision "shell", inline: $script
+  config.vm.boot_timeout = 600
+
+  winClientIP = "192.168.99.103"
+  config.vm.network "private_network", ip: winClientIP,  bridge: "Realtek USB GbE Family Controller"
   
-    config.vm.network "public_network", bridge: "Realtek USB GbE Family Controller"
-  end
+  config.ssh.username = "vagrant"
+  config.ssh.password = "vagrant"
   
+  config.vm.communicator = "winrm"
+  config.winrm.username = "vagrant"
+  config.winrm.password = "Aquacure"
+  
+  config.vm.provider "virtualbox" do |vb|
+          vb.memory = "2048"
+          vb.cpus = 2
+          vb.customize ["modifyvm", :id, "--vram", "128"]
+          vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
+          vb.name = "Arklay1998"   
+      end
+end
